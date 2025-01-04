@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Hardik Hamal" />
+    <meta name="description" content="Hardik Hamal - Web Developer Portfolio" />
+    <title>Hardik Hamal | Web Developer</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        background-color: #121212;
+        color: #fff;
+        line-height: 1.6;
+        font-size: 16px;
+        overflow-x: hidden;
+        transition: background-color 0.3s ease;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        font-family: "Roboto", sans-serif;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Dark Mode */
+      body.dark-theme {
+        background-color: #121212;
+        color: #fff;
+      }
+
+      body.dark-theme h1,
+      body.dark-theme h2,
+      body.dark-theme h3 {
+        color: #fff;
+      }
+
+      /* HERO SECTION */
+      #hero {
+        position: relative;
+        height: 100vh;
+        background: url("https://source.unsplash.com/1600x900/?technology")
+          no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        animation: fadeInHero 2s ease-out;
+        flex-direction: column;
+        transform: scale(1);
+        animation: zoomInBackground 3s ease-out;
+      }
+
+      @keyframes zoomInBackground {
+        0% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      #hero h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        animation: slideUp 1.5s ease-out;
+      }
+
+      #hero p {
+        font-size: 1.5rem;
+        margin-top: 20px;
+        opacity: 0;
+        animation: fadeInText 2s ease-out 1s forwards;
+      }
+
+      #hero img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin-top: 20px;
+        border: 4px solid #fff;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        animation: fadeInImage 2s ease-out 1s forwards;
+      }
+
+      @keyframes fadeInHero {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        0% {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInText {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInImage {
+        0% {
+          opacity: 0;
+          transform: scale(0.6);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* ABOUT SECTION */
+      #about {
+        padding: 80px 20px;
+        background: #1f1f1f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        animation: fadeInUp 1.5s ease-out;
+      }
+
+      #about h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        animation: slideInLeft 1s ease-out;
+      }
+
+      #about p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        text-align: center;
+        margin-top: 20px;
+        color: #bbb;
+        line-height: 1.7;
+        opacity: 0;
+        animation: fadeInUpText 2s ease-out 0.5s forwards;
+      }
+
+      @keyframes slideInLeft {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInUpText {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* SKILLS SECTION */
+      #skills {
+        background: #2c2c2c;
+        padding: 100px 20px;
+        text-align: center;
+        animation: fadeInUp 1.5s ease-out;
+      }
+
+      #skills h2 {
+        font-size: 3rem;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+
+      .skills-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        animation: fadeInSkills 2s ease-out;
+      }
+
+      @keyframes fadeInSkills {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .skill {
+        background: #4caf50;
+        padding: 25px;
+        font-size: 1.3rem;
+        color: white;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        opacity: 0;
+        animation: fadeInSkill 2s ease-out 0.5s forwards;
+      }
+
+      @keyframes fadeInSkill {
+        0% {
+          opacity: 0;
+          transform: scale(0.6);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .skill:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* PROJECTS SECTION */
+      #projects {
+        background: #333;
+        padding: 80px 20px;
+        text-align: center;
+        animation: fadeInUp 1.5s ease-out;
+      }
+
+      #projects h2 {
+        font-size: 3rem;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+
+      .project-card {
+        background: #444;
+        padding: 30px;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        opacity: 0;
+        animation: fadeInProject 1.5s ease-out 0.5s forwards;
+      }
+
+      @keyframes fadeInProject {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .project-card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+
+      .project-card p {
+        font-size: 1rem;
+        color: #bbb;
+      }
+
+      /* CONTACT SECTION */
+      #contact {
+        padding: 80px 20px;
+        background: #1f1f1f;
+        color: #fff;
+        text-align: center;
+        animation: fadeInUp 1.5s ease-out;
+      }
+
+      #contact h2 {
+        font-size: 3rem;
+        margin-bottom: 40px;
+      }
+
+      #contact p {
+        font-size: 1.2rem;
+        margin-top: 20px;
+      }
+
+      #contact a {
+        font-size: 1.2rem;
+        color: #4caf50;
+        transition: color 0.3s ease;
+      }
+
+      #contact a:hover {
+        color: #45a049;
+      }
+
+      /* Footer */
+      footer {
+        background: #121212;
+        padding: 20px;
+        color: #bbb;
+        text-align: center;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        #hero h1 {
+          font-size: 2.5rem;
+        }
+
+        #hero p {
+          font-size: 1.2rem;
+        }
+
+        #about h2 {
+          font-size: 2.5rem;
+        }
+
+        .skills-list {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .skill {
+          width: 200px;
+        }
+      }
+
+      /* Dark Mode Toggle Button Animation */
+      #toggle-theme {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #4caf50;
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+      }
+
+      #toggle-theme:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HERO SECTION -->
+    <section id="hero">
+      <div>
+        <img src="hardik.jpg" alt="Hardik Hamal" loading="lazy" />
+        <!-- Profile Image -->
+        <h1>Hardik Hamal</h1>
+        <p>Creative Web Developer & Problem Solver</p>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <div>
+        <h2>About Me</h2>
+        <p>
+          I am a web developer passionate about creating efficient, scalable,
+          and beautiful web applications. With skills in HTML, CSS, JavaScript,
+          React, Python, and Java, I am always eager to learn new technologies
+          and grow as a developer.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">React</div>
+        <div class="skill">Python</div>
+        <div class="skill">Java</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-card">
+        <h3>Student Management System</h3>
+        <p>
+          A web-based system to manage student data like grades, attendance, and
+          course management. Built using React and Node.js.
+        </p>
+      </div>
+      <div class="project-card">
+        <h3>E-Cosmetics</h3>
+        <p>
+          An e-commerce platform for cosmetics with a responsive design, product
+          management, and secure payments. Built using React and Python Django.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>If you’d like to connect, feel free to reach out via the following:</p>
+      <p>
+        Email:
+        <a href="mailto:hamalhardik629@gmail.com">hamalhardik629@gmail.com</a>
+      </p>
+      <p>Phone: <a href="tel:+91745327693">9745327693</a></p>
+    </section>
+
+    <!-- Social Media Links -->
+    <footer>
+      <div>
+        <a
+          href="https://github.com/yourusername"
+          target="_blank"
+          class="social-icon"
+        >
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a
+          href="https://www.linkedin.com/in/yourusername/"
+          target="_blank"
+          class="social-icon"
+        >
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+      <p>&copy; 2025 Hardik Hamal. All rights reserved.</p>
+    </footer>
+
+    <!-- Dark Mode Toggle Button -->
+    <button
+      id="toggle-theme"
+      style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #4caf50;
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 50%;
+      "
+    >
+      🌙
+    </button>
+
+    <script>
+      // Dark Mode Toggle
+      const toggleTheme = document.getElementById("toggle-theme");
+      toggleTheme.addEventListener("click", () => {
+        document.body.classList.toggle("dark-theme");
+        if (document.body.classList.contains("dark-theme")) {
+          toggleTheme.innerHTML = "☀️"; // Light Mode Icon
+        } else {
+          toggleTheme.innerHTML = "🌙"; // Dark Mode Icon
+        }
+      });
+    </script>
+  </body>
+</html>
